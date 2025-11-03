@@ -1,3 +1,33 @@
 @import "tailwindcss";
 
 @config "../../tailwind.config.js";
+
+@theme {
+  --color-primary-blue: #0437f2;
+  --color-secondary-black: #101010;
+  --color-tertiary-white: #f7f7f7;
+  --font-family: "Inter", sans-serif;
+}
+
+:root {
+  --primary-blue: #0437f2;
+  --secondary-black: #101010;
+  --tertiary-white: #f7f7f7;
+  --font-family: "Inter", sans-serif;
+}
+
+.light-mode {
+  color: var(--accent-black);
+  background: var(--tertiary-white);
+}
+
+.dark-mode {
+  color: var(--tertiary-white);
+  background: var(--secondary-black);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+}
