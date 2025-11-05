@@ -1,7 +1,5 @@
-import React from "react";
-
 const Main = () => {
-  return <div>Dashboard Top Container</div>;
+  return <div>Dashboard Second Container after Calendar</div>;
 };
 
 export default Main;
