@@ -1,4 +1,4 @@
-import { Button } from "@heroui/react";
+import { Button, Link } from "@heroui/react";
 import { useDispatch } from "react-redux";
 import { sessionModalToggle } from "../../store/Slices/DashboardSlice";
 
@@ -8,7 +8,9 @@ const DashHeader = () => {
   return (
     <div className="w-screen flex items-center justify-between text-secondary-black bg-tertiary-white px-[5%] py-[1%]">
       <div>
-        <p className="font-bold text-2xl">JournalZ</p>
+        <Link href="/">
+          <p className="font-bold text-2xl">JournalZ</p>
+        </Link>
       </div>
 
       <div>

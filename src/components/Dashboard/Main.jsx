@@ -3,8 +3,11 @@
 import NewSessionModal from "../Modals/NewSessionModal";
 import CalendarWrapper from "./CalendarWrapper";
 import { useSelector } from "react-redux";
+import { usePathname } from "next/navigation";
 
 const Main = () => {
+  const pathname = usePathname();
+
   const { sessions, newsessionmodal } = useSelector(
     (store) => store?.dashboard
   );

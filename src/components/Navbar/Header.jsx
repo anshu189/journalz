@@ -34,7 +34,9 @@ export default function Header() {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <p className="font-bold text-xl">JournalZ</p>
+          <Link href="/">
+            <p className="font-bold text-2xl">JournalZ</p>
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
@@ -44,14 +46,19 @@ export default function Header() {
             Home
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
-          <Link aria-current="page" href="/dashboard">
-            Pairs
+        <NavbarItem>
+          <Link color="foreground" href="/dashboard">
+            Dashboard
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="/profile">
-            Earn
+            Profile
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="/sessions">
+            Sessions
           </Link>
         </NavbarItem>
       </NavbarContent>

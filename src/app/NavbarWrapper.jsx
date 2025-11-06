@@ -9,7 +9,8 @@ const NavbarWrapper = ({ children }) => {
   const hideNavbar =
     pathname.startsWith("/login") ||
     pathname.startsWith("/register") ||
-    pathname.startsWith("/dashboard");
+    pathname.startsWith("/dashboard") ||
+    pathname.startsWith("/sessions");
 
   return (
     <div className="relative h-screen">
