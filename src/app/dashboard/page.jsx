@@ -1,12 +1,11 @@
 "use client";
 
 import Main from "../../components/Dashboard/Main";
-import CalendarWrapper from "../../components/Dashboard/CalendarWrapper";
-
+import DashHeader from "../../components/Dashboard/DashHeader";
 const Dashboard = () => {
   return (
-    <div className="h-screen flex flex-col items-center justify-start p-10">
-      <CalendarWrapper />
+    <div className="w-screen h-screen flex flex-col items-center justify-start">
+      <DashHeader />
       <Main />
     </div>
   );

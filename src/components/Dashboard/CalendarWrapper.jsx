@@ -27,7 +27,7 @@ export default function CalendarWrapper() {
   };
 
   return (
-    <div className="relative flex h-screen max-h-screen w-full flex-col gap-4 px-4 pt-4 items-center justify-center">
+    <div className="dashcalendar relative flex h-screen max-h-screen w-full flex-col gap-4 px-4 pt-4 items-center justify-center">
       <div className="relative h-full overflow-auto mt-20">
         <MainCalendar onClick={onClickHandler} />
       </div>

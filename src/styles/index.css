@@ -33,7 +33,7 @@ body {
 }
 
 /* Calendar Global Styling */
-*:focus:not(ol) {
+.dashcalendar > *:focus:not(ol) {
   @apply outline-none ring-2 ring-cyan-400 border-cyan-400;
 }
 
