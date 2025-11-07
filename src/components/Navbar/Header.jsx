@@ -48,7 +48,7 @@ export default function Header() {
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="/dashboard">
-            Dashboard
+            Sessions
           </Link>
         </NavbarItem>
         <NavbarItem>
