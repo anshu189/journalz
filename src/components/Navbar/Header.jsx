@@ -40,7 +40,7 @@ export default function Header() {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className="hidden sm:flex gap-6" justify="center">
         <NavbarItem>
           <Link color="foreground" href="/">
             Home
@@ -54,11 +54,6 @@ export default function Header() {
         <NavbarItem>
           <Link color="foreground" href="/profile">
             Profile
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="/sessions">
-            Sessions
           </Link>
         </NavbarItem>
       </NavbarContent>

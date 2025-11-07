@@ -12,14 +12,18 @@ const DashboardSlice = createSlice({
     },
     removeSession: (state, action) => {
       state.sessions = state.sessions.filter(
-        (session) => session.symbol !== action.payload.symbol
+        (session) => session !== action.payload
       );
     },
     clearSession: (state) => {
       state.sessions.length = 0;
     },
-    sessionModalToggle: (state) => {
-      state.newsessionmodal = !state.newsessionmodal;
+    sessionModalToggle: (state, action) => {
+      if (typeof action.payload === "boolean") {
+        state.newsessionmodal = action.payload;
+      } else {
+        state.newsessionmodal = !state.newsessionmodal;
+      }
     },
   },
 });

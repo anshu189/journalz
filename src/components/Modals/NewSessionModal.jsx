@@ -1,5 +1,4 @@
 import { Button } from "@heroui/react";
-import { futuresContracts } from "../../Data/FutureContractsData/FutureContracts";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import {
@@ -8,47 +7,45 @@ import {
 } from "../../store/Slices/DashboardSlice";
 
 const NewSessionModal = () => {
-  const [asset, setasset] = useState("");
+  const [sessionName, setSessionName] = useState("");
   const dispatch = useDispatch();
 
-  const handleAssetSelection = () => {
-    const getasset = futuresContracts.find(
-      (contract) => contract.symbol === asset
-    );
-    dispatch(addSession(getasset));
+  const handleCreateSession = () => {
+    dispatch(addSession(sessionName));
     dispatch(sessionModalToggle());
   };
 
+  const handleCloseModal = () => {
+    dispatch(sessionModalToggle(false));
+  };
+
   return (
-    <div className="absolute w-4/12 flex flex-col gap-2 text-secondary-black rounded-lg px-6 py-4 bg-tertiary-white top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] shadow-lg">
-      <p className="text-lg font-semibold">Choose your Asset</p>
-      <select
-        className="border-1 rounded-md p-2 cursor-pointer overflow-y-scroll"
-        onChange={(e) => setasset(e.target.value)}
-      >
-        <option value="" hidden>
-          Select
-        </option>
-        {futuresContracts.map((contract) => {
-          return (
-            <option
-              key={contract.id}
-              name={contract.name}
-              value={contract.symbol}
-            >
-              ({contract.symbol}) - {contract.name}
-            </option>
-          );
-        })}
-      </select>
-      <Button
-        onClickCapture={handleAssetSelection}
-        color="primary"
-        variant="solid"
-        className="self-end mt-2 w-3/12"
-      >
-        Create Session
-      </Button>
+    <div className="absolute z-20 w-4/12 flex flex-col gap-1 text-tertiary-white rounded-lg px-6 py-4 bg-secondary-black top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] shadow-lg">
+      <p className="text-lg">Session Name</p>
+      <input
+        type="text"
+        value={sessionName}
+        onChange={(e) => setSessionName(e.target.value)}
+        className="border-1 rounded-md p-2"
+      />
+      <div className="flex gap-4 items-center justify-between my-2">
+        <Button
+          onClickCapture={handleCloseModal}
+          color="primary"
+          variant="flat"
+          className="w-full mt-2"
+        >
+          Cancel
+        </Button>
+        <Button
+          onClickCapture={handleCreateSession}
+          color="primary"
+          variant="solid"
+          className="w-full mt-2"
+        >
+          Create Session
+        </Button>
+      </div>
     </div>
   );
 };
