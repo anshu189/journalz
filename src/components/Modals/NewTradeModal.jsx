@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@heroui/react";
 import { futuresContracts } from "../../Data/FutureContractsData/FutureContracts";
 import { useState } from "react";

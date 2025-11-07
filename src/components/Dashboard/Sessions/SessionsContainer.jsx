@@ -4,9 +4,10 @@ import { Button } from "@heroui/button";
 import { useDispatch } from "react-redux";
 import { removeSession } from "../../../store/Slices/DashboardSlice";
 import { addactiveSession } from "../../../store/Slices/SessionSlice";
-
+import { useRouter } from "next/navigation";
 const SessionsContainer = ({ sessiondata }) => {
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const handlesessionDelete = () => {
     dispatch(removeSession(sessiondata));
@@ -14,6 +15,7 @@ const SessionsContainer = ({ sessiondata }) => {
 
   const handleOpenSession = () => {
     dispatch(addactiveSession(sessiondata.name));
+    router.push(`/sessions/${sessiondata.id}`);
   };
 
   return (

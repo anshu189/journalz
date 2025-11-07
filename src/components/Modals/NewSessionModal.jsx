@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@heroui/react";
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";

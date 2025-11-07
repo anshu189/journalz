@@ -11,7 +11,11 @@ export default function RootLayout({ children }) {
   return (
     <html suppressHydrationWarning lang="en">
       <head />
-      <body className={clsx("min-h-screen dark-mode font-sans antialiased")}>
+      <body
+        className={clsx(
+          "min-h-screen dark-mode font-sans antialiased overflow-x-hidden"
+        )}
+      >
         <Provider store={appstore}>
           <HeroProviders>
             <NavbarWrapper>

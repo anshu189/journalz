@@ -1,3 +1,5 @@
+"use client";
+
 import { Button, Link } from "@heroui/react";
 import { useDispatch } from "react-redux";
 import { sessionModalToggle } from "../../store/Slices/DashboardSlice";
@@ -22,6 +24,19 @@ const DashHeader = () => {
             onClickCapture={() => dispatch(sessionModalToggle())}
           >
             <span className="text-xl">+</span> New Session
+          </Button>
+        </div>
+      )}
+      {pathname.startsWith("/sessions/") && (
+        <div>
+          <Button
+            as={Link}
+            color="primary"
+            variant="solid"
+            href="/dashboard"
+            onClickCapture={() => dispatch(sessionModalToggle())}
+          >
+            All Sessions
           </Button>
         </div>
       )}

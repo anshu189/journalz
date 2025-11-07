@@ -1,11 +1,5 @@
-import { SnackProvider } from "../../utils/SnackProvider";
-
 const Dashboardlayout = ({ children }) => {
-  return (
-    <div>
-      <SnackProvider>{children}</SnackProvider>
-    </div>
-  );
+  return <div>{children}</div>;
 };
 
 export default Dashboardlayout;
