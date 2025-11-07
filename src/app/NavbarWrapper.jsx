@@ -13,7 +13,7 @@ const NavbarWrapper = ({ children }) => {
     pathname.startsWith("/sessions");
 
   return (
-    <div className="relative h-screen">
+    <div className="relative">
       {!hideNavbar && <Header />}
       {children}
     </div>

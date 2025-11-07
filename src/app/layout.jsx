@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
         <Provider store={appstore}>
           <HeroProviders>
             <NavbarWrapper>
-              <div className="relative h-screen">{children}</div>
+              <div className="relative">{children}</div>
             </NavbarWrapper>
           </HeroProviders>
         </Provider>

@@ -3,19 +3,29 @@
 import { Button } from "@heroui/button";
 import { useDispatch } from "react-redux";
 import { removeSession } from "../../../store/Slices/DashboardSlice";
+import { addactiveSession } from "../../../store/Slices/SessionSlice";
 
-const SessionsContainer = ({ data }) => {
+const SessionsContainer = ({ sessiondata }) => {
   const dispatch = useDispatch();
 
   const handlesessionDelete = () => {
-    dispatch(removeSession(data));
+    dispatch(removeSession(sessiondata));
+  };
+
+  const handleOpenSession = () => {
+    dispatch(addactiveSession(sessiondata.name));
   };
 
   return (
     <div className="cursor-pointer shadow-md w-full px-6 py-4 rounded-lg flex justify-between items-center bg-white/10">
-      <p className="text-xl font-semibold">{data}</p>
+      <p className="text-xl font-semibold">{sessiondata.name}</p>
       <div className="flex gap-4 items-center">
-        <Button color="primary" variant="solid" size="lg">
+        <Button
+          color="primary"
+          variant="solid"
+          size="lg"
+          onClickCapture={handleOpenSession}
+        >
           Open Session
         </Button>
         <Button

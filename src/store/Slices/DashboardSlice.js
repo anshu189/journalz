@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const DashboardSlice = createSlice({
   name: "dashboard",
   initialState: {
+    sessionidcounter: 1,
     sessions: [],
     newsessionmodal: false,
   },
@@ -12,7 +13,7 @@ const DashboardSlice = createSlice({
     },
     removeSession: (state, action) => {
       state.sessions = state.sessions.filter(
-        (session) => session !== action.payload
+        (session) => session.id !== action.payload.id
       );
     },
     clearSession: (state) => {
@@ -25,9 +26,21 @@ const DashboardSlice = createSlice({
         state.newsessionmodal = !state.newsessionmodal;
       }
     },
+    addSessionIdCounter: (state) => {
+      state.sessionidcounter += 1;
+    },
+    removeSessionIdCounter: (state) => {
+      state.sessionidcounter -= 1;
+    },
   },
 });
 
-export const { addSession, removeSession, clearSession, sessionModalToggle } =
-  DashboardSlice.actions;
+export const {
+  addSession,
+  removeSession,
+  clearSession,
+  sessionModalToggle,
+  addSessionIdCounter,
+  removeSessionIdCounter,
+} = DashboardSlice.actions;
 export default DashboardSlice.reducer;

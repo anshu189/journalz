@@ -8,7 +8,7 @@ import NewSessionModal from "../../components/Modals/NewSessionModal";
 const Dashboard = () => {
   const { newsessionmodal } = useSelector((store) => store?.dashboard);
   return (
-    <div className="w-screen h-screen flex flex-col items-center justify-start">
+    <div className="h-[100%] flex flex-col items-center justify-start overflow-x-hidden">
       <DashHeader />
       <Main />
       {newsessionmodal && <NewSessionModal />}
