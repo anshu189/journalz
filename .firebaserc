@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "site": "journalz-io",
+    "default": "journalz-3a168"
+  },
+  "targets": {
+    "journalz-3a168": {
+      "hosting": {
+        "journalz-io": [
+          "journalz-io"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
